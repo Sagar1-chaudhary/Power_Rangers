@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,7 @@ public class UpdateUser {
 
     @Operation(method = ApiConstants.UPDATE_USER, summary = "Api Update User")
     @PutMapping(ApiConstants.UPDATE_USER)
-    public ResponseEntity<Object> updateUser(User user) {
+    public ResponseEntity<Object> updateUser(@RequestBody  User user) {
         return updateUserService.updateUser(user);
     }
 }
