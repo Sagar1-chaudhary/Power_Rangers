@@ -17,6 +17,13 @@ public class GetUserController {
     @Autowired
     private GetUserService getUserService;
 
+    @Operation(method = ApiConstants.GET_USER_BY_EMAIL, summary = "Api to get user by email")
+    @GetMapping(ApiConstants.GET_USER_BY_EMAIL)
+    public ResponseEntity<Object> getEmployeeByEmpCode(@RequestParam String email) {
+        ResponseEntity<Object> response = getUserService.getUserByEmail(email);
+        return response;
+    }
+
     @Operation(method = ApiConstants.GET_USER_BY_ID, summary = "Api to get user by ID")
     @GetMapping(ApiConstants.GET_USER_BY_ID)
     public ResponseEntity<Object> getEmployeeByEmpCode(@RequestParam Integer userId) {

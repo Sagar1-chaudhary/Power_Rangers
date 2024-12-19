@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
-public class UserRegistrationService {
+public class RegisterUserService {
 
     @Autowired
     private UserRepository userRepository;
