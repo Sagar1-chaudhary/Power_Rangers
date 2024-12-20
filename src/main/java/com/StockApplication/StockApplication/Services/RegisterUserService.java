@@ -32,5 +32,4 @@ public class RegisterUserService {
             User savedUser = userRepository.save(user);
             return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
-
 }

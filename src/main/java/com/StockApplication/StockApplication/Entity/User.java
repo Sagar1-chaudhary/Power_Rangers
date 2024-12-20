@@ -42,6 +42,8 @@ public class User {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Embedded
+    @Lob
+    @Column(name = "address")
+    @Convert(converter = AddressConverter.class)
     private Address address;
 }
